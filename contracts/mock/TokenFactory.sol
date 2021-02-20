@@ -66,6 +66,6 @@ contract TokenFactory {
             token := create2(0, add(bytecode, 32), mload(bytecode), salt)
         }
         createdToken = token;
-        TokenMock(createdToken).setDecimal(decimals);
+       // TokenMock(createdToken).setDecimal(decimals);
     }
 }
