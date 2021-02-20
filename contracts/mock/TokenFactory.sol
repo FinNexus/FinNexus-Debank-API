@@ -40,7 +40,7 @@ contract TokenMock is ERC20, ERC20Detailed {
      function getTokenNetworth() external view returns (uint256){
          return 1e8;
      }
-     function getUserInputCollateral(address user,address collateral) external view returns (uint256){
+     function userInputCollateral(address user,address collateral) external view returns (uint256){
             return 1 ether;
      }
 

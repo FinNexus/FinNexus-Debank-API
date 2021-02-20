@@ -20,7 +20,7 @@ interface IFnxOracle {
 
 interface ICollateralPool {
      function getTokenNetworth() external view returns (uint256);
-     function getUserInputCollateral(address user,address collateral) external view returns (uint256);
+     function userInputCollateral(address user,address collateral) external view returns (uint256);
      function getUserPayingUsd(address account) external view returns (uint256);
 
 }
@@ -77,7 +77,7 @@ contract FnxMineDebankView is Storage,Ownable {
      * @param _pool the collateal pool     
      */
     function getUserInputCollateral(address _user,address _collateral,address _pool) public view returns (uint256){
-      return ICollateralPool(_pool).getUserInputCollateral(_user,_collateral);   
+      return ICollateralPool(_pool).userInputCollateral(_user,_collateral);   
     }
     
     function getVersion() public pure returns (uint256)  {
