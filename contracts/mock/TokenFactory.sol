@@ -44,7 +44,7 @@ contract TokenMock is ERC20, ERC20Detailed {
             return 1 ether;
      }
 
-     function getUserTotalWorth(address account) external view returns (uint256){
+     function getUserPayingUsd(address account) external view returns (uint256){
             return 1e8;
      }
 
