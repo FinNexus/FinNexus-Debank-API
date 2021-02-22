@@ -1,4 +1,4 @@
-contract address:0x8664c6CAC83973068d47c4A430Eb4918125f40B0
+contract address:0x6E63111D9035dcD4687e91CA0F8C2cd0e876Da6A
 
 1. 获取抵押物的数量
  function getUserInputCollateral(address _user,address _collateral,address _pool) public view returns (uint256)
