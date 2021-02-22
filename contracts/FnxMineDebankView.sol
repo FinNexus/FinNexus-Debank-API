@@ -67,7 +67,7 @@ contract FnxMineDebankView is Storage,Ownable {
 
 
     function getUsdcPoolColValue(address _user)  public view returns (uint256) {
-        return ICollateralPool(fnxColPool).getUserPayingUsd(_user);
+        return ICollateralPool(usdcColPool).getUserPayingUsd(_user);
     }
     
     /**
