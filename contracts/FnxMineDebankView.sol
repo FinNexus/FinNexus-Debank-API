@@ -37,8 +37,8 @@ contract FnxMineDebankView is Ownable {
     address public cfnxToken = 0x9d7beb4265817a4923FAD9Ca9EF8af138499615d;
     address public fnxOracle = 0x43BD92bF3Bb25EBB3BdC2524CBd6156E3Fdd41F3;
 
-    function getMinedUnclaimedBalance(address _user,address minepool) public view returns (uint256) {
-        return IFixedMinePool(minepool).getMinerBalance(_user,cfnxToken);
+    function getMinedUnclaimedBalance(address _user,address _minepool) public view returns (uint256) {
+        return IFixedMinePool(_minepool).getMinerBalance(_user,cfnxToken);
     }
 
    function getApy(address _user,address minepool,address colforfptapool) public view returns (uint256) {
