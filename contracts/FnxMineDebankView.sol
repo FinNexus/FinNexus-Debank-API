@@ -52,11 +52,10 @@ contract FnxMineDebankView is Ownable {
             uint256 fptbprice = ICollateralPool(fnxColPool).getTokenNetworth();
 
             uint256 denominater = (FTPA.mul(fptaprice)).add(FTPB.mul(fptbprice));
-            
             if(denominater==0) {
                return 0;
             }
-            
+
             return mineofyear.mul(fnxprice).mul(1000).div(denominater);
     }
 
