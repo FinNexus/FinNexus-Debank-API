@@ -1,0 +1,30 @@
+contract address:0x6E63111D9035dcD4687e91CA0F8C2cd0e876Da6A
+
+1. 获取抵押物的数量
+ function getUserInputCollateral(address _user,address _collateral,address _pool) public view returns (uint256)
+
+输入：1. user 地址
+      2. collateral 抵押物 token地址
+      3. 抵押池地址
+
+->获取 USDC
+	_collateral = 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
+	_pool = 0x120f18F5B8EdCaA3c083F9464c57C11D81a9E549
+	
+->获取 USDT	
+	_collateral = 0xdAC17F958D2ee523a2206206994597C13D831ec7
+	_pool = 0x120f18F5B8EdCaA3c083F9464c57C11D81a9E549	
+	
+->获取 FNX
+	_collateral = 0xeF9Cd7882c067686691B6fF49e650b43AFBBCC6B
+	_pool = 0xfDf252995da6D6c54C03FC993e7AA6B593A57B8d	
+
+	
+2.年化收益率
+   function getApy(address _user) public view returns (uint256)
+   返回值内部 *1000,外边需要除以 1000
+
+3.Unclaimed FNX:  
+	function getMinedUnclaimedBalance(address _user) public view returns (uint256)   
+	
+	
