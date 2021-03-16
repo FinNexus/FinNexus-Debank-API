@@ -3,9 +3,9 @@ contract address:0x6E63111D9035dcD4687e91CA0F8C2cd0e876Da6A
 1. 获取抵押物的数量
  function getUserInputCollateral(address _user,address _collateral,address _pool) public view returns (uint256)
 
-输入：1. user 地址
-      2. collateral 抵押物 token地址
-      3. 抵押池地址
+输入：1. _user 地址
+      2. _collateral 抵押物 token地址
+      3. _pool抵押池地址
 
 ->获取 USDC
 	_collateral = 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48
@@ -18,13 +18,35 @@ contract address:0x6E63111D9035dcD4687e91CA0F8C2cd0e876Da6A
 ->获取 FNX
 	_collateral = 0xeF9Cd7882c067686691B6fF49e650b43AFBBCC6B
 	_pool = 0xfDf252995da6D6c54C03FC993e7AA6B593A57B8d	
+	
+->获取 FRAX
+	 _collateral = 0x853d955acef822db058eb8505911ed77f175b99e
+	 _pool = 0xa2904fd151c9d9d634dfa8ecd856e6b9517f9785	
 
 	
 2.年化收益率
-   function getApy(address _user) public view returns (uint256)
-   返回值内部 *1000,外边需要除以 1000
+   function getApy(address _user,address _minepool,address _colforfptapool) public view returns (uint256)
+输入： 
+   1. _user 地址
+   2. _minepool 挖矿池地址
+   3. _colforfptapool fpta 抵押池地址
+   
+->获取 USD*/FNX 挖矿池年化收益率
+    _minepool = 0xf1FF936B72499382983a8fBa9985C41cB80BE17D
+	_colforfptapool = 0x120f18F5B8EdCaA3c083F9464c57C11D81a9E549
+	
+->获取 FRAX/FNX 挖矿池年化收益率 
+    _minepool = 0x4e6005396f80a737ce80d50b2162c0a7296c9620
+	_colforfptapool = 0xa2904fd151c9d9d634dfa8ecd856e6b9517f9785	
+   
+返回值：年化收益率
+		内部 *1000,外边需要除以 1000
 
 3.Unclaimed FNX:  
-	function getMinedUnclaimedBalance(address _user) public view returns (uint256)   
+	 function getMinedUnclaimedBalance(address _user,address _minepool) public view returns (uint256)  
+->获取 USD*/FNX 挖矿池 未提取的币量
+     _minepool = 0xf1FF936B72499382983a8fBa9985C41cB80BE17D
+->获取 FRAX/FNX 挖矿池 未提取的币量 
+	 _minepool = 0x4e6005396f80a737ce80d50b2162c0a7296c9620
 	
 	
