@@ -41,14 +41,14 @@ contract FnxMineDebankView is Ownable {
         return IFixedMinePool(_minepool).getMinerBalance(_user,cfnxToken);
     }
 
-   function getApy(address _user,address minepool,address colforfptapool) public view returns (uint256) {
-            uint256 mineofyear = IFixedMinePool(minepool).getUserCurrentAPY(_user,cfnxToken);
+   function getApy(address _user,address _minepool,address _colforfptapool) public view returns (uint256) {
+            uint256 mineofyear = IFixedMinePool(_minepool).getUserCurrentAPY(_user,cfnxToken);
             
-            uint256 FTPA = IFixedMinePool(minepool).getUserFPTABalance(_user);
-            uint256 FTPB = IFixedMinePool(minepool).getUserFPTBBalance(_user);
+            uint256 FTPA = IFixedMinePool(_minepool).getUserFPTABalance(_user);
+            uint256 FTPB = IFixedMinePool(_minepool).getUserFPTBBalance(_user);
             uint256 fnxprice =  IFnxOracle(fnxOracle).getPrice(fnxToken);
 
-            uint256 fptaprice = ICollateralPool(colforfptapool).getTokenNetworth();
+            uint256 fptaprice = ICollateralPool(_colforfptapool).getTokenNetworth();
             uint256 fptbprice = ICollateralPool(fnxColPool).getTokenNetworth();
 
             uint256 denominater = (FTPA.mul(fptaprice)).add(FTPB.mul(fptbprice));
